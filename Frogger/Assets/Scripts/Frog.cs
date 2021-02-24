@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Frog : MonoBehaviour {
 
@@ -15,5 +16,15 @@ public class Frog : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.DownArrow))
             rb.MovePosition(rb.position + Vector2.down);
 
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Car")
+        {
+            Debug.Log("WE LOST!");
+            Score.CurrentScore = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
