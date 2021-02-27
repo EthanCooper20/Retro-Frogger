@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
     public static bool GameisPaused = false;
+
+    private int currentSceneIndex;
 
 
     public GameObject pauseMenuUI;
@@ -46,7 +49,14 @@ public class Pause : MonoBehaviour
 
     public void SaveGame()
     {
-        PlayerPrefs.SetInt("SaveScene", SceneManager.GetActiveScene().buildIndex);
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadGame()
+    {
+        SceneManager.LoadScene(PlayerPrefs.GetInt("SavedScene"));
     }
 
 
