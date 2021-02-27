@@ -50,4 +50,9 @@ public class Pause : MonoBehaviour
         SceneManager.LoadScene("Credits");
 
     }
+
+    public void NewGame()
+    {
+        SceneManager.LoadScene("Main");
+    }
 }
