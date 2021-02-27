@@ -44,6 +44,11 @@ public class Pause : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    public void SaveGame()
+    {
+        PlayerPrefs.SetInt("SaveScene", SceneManager.GetActiveScene().buildIndex);
+    }
+
 
     public void QuitGame()
     {
