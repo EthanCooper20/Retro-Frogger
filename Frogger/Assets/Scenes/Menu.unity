@@ -535,6 +535,7 @@ GameObject:
   - component: {fileID: 118232410}
   - component: {fileID: 118232414}
   - component: {fileID: 118232415}
+  - component: {fileID: 118232416}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -654,6 +655,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 024195bb75d458b4bb7954d85fa9667b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &118232416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118232409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca075204a3bbb94cb1261f3a0792fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 3
 --- !u!1 &272153889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1829,7 +1843,7 @@ GameObject:
   - component: {fileID: 790852349}
   - component: {fileID: 790852350}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: GameSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1918,7 +1932,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &808376441
 GameObject:
@@ -3189,7 +3203,7 @@ GameObject:
   - component: {fileID: 1464741606}
   - component: {fileID: 1464741605}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: Lives
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3287,6 +3301,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 118232409}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1464741606
@@ -3415,7 +3441,7 @@ GameObject:
   - component: {fileID: 1528160265}
   - component: {fileID: 1528160264}
   m_Layer: 5
-  m_Name: InputField
+  m_Name: NameInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
